@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Menu</title>
+  <link rel="stylesheet">
+<style>
+  /* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #710f0f;
+  background-image: linear-gradient(to bottom, #c51077, #ff69b4, #ffc5c5); /* Pinkish and purplish gradient */
+  background-size: cover;
+  align-items: center;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Menu Categories Styles */
+
+.menu-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.menu-category {
+  background-color: #ff99cc; /* Light pink color */
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-category:hover {
+  background-color: #7aff99; /* Light orange color */
+}
+
+/* Menu Content Styles */
+
+#menu-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 50px;
+  background-color: #d92c6e;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: 50px auto;
+}
+
+.dish {
+  background-color: #f4f0f0; /* Light gray color */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dish img {
+  object-fit: cover;
+  border-radius: 30px 30px 0 0;
+}
+
+.dish h3 {
+  margin-top: 15px;
+  color: #044d07; /* Green color */
+}
+
+.dish p {
+  font-size: 20px;
+  color: #0d0c0c;
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px) {
+  .menu-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu-category {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  #menu-content {
+    padding: 10px;
+    width: 90%;
+  }
+  
+  .dish {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size:200px;
+ }
+  
+  h2 {
+    font-size: 38px;
+  }
+  
+  h3 {
+    font-size: 84px ;
+   
+  }
+  
+  p {
+    font-size: 19px;
+  }
+  
+  .dish img {
+    height: 100px;
+  }
+}
+</style>
+<body>
+    <h1 style="text-align: center; margin-top: 10px;font-size: 90px">FOOD MENU</h1>
+  <div class="menu-categories">
+    <button class="menu-category" onclick="showIndianDishes()">Indian Dishes</button>
+    <button class="menu-category" onclick="showInternationalDishes()">International Dishes</button>
+    <button class="menu-category" onclick="showVegetarianAndVeganOptions()">Vegetarian and Vegan Options</button>
+    <button class="menu-category" onclick="showDesserts()">Desserts</button>
+    <button class="menu-category" onclick="showBeverages()">Beverages</button>
+    <button class="menu-category" onclick="showSpecialDiet()">Special Diet</button>
+    <button class="menu-category" onclick="showSeasonalAndLimitedTimeOffers()">Seasonal and Limited Time Offers</button>
+  </div>
+  <div id="menu-content">
+    <!-- Indian Dishes -->
+    <div id="indian-dishes" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">Indian Dishes</h2>
+      <div class="dish">
+        <img src="https://as1.ftcdn.net/jpg/04/68/93/94/1000_F_468939407_9Q02XfVQJsKW0ZUEU4axdITcRgu7OPLd.jpg"   width=850px height=450px alt="Tandoori Chicken">
+        <h3>Tandoori Chicken</h3>
+        <p>Origin: India</p>
+        <p>Rating: 4.5/5</p>
+        <p>Description: Marinated chicken cooked in a tandoor oven, served with a side of basmati rice and naan bread.</p>
+      </div>
+      <div class="dish">
+        <img src="https://img.freepik.com/free-photo/flat-lay-pakistani-food-arrangement_23-2148825110.jpg?t=st=1736671272~exp=1736674872~hmac=dc247e5bd27d7e02654add17d777c1d981c1584eae9a2762f156138b12fcc3d6&w=900"   width=850px height=450px alt="Palak Paneer">
+        <h3>Palak Paneer</h3>
+        <p>Origin: India</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: Creamy spinach curry cooked with paneer and spices, served with a side of basmati rice and naan bread.</p>
+      </div>
+      <div class="dish">
+        <img src="https://as2.ftcdn.net/v2/jpg/02/97/69/65/1000_F_297696576_s8k3pGepliFhN2oILIzLUAkQuukKalDI.jpg"  width=850px height=450px alt="Chana Masala">
+        <h3>Chana Masala</h3>
+        <p>Origin: India</p>
+        <p>Rating: 4.1/5</p>
+        <p>Description: Chickpea curry cooked with onions, tomatoes, and spices, served with a side of basmati rice and naan bread.</p>
+      </div>
+    </div>
+    <!-- International Dishes -->
+    <div id="international-dishes" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">International Dishes</h2>
+      <div class="dish">
+        <img src="https://images8.alphacoders.com/111/1117737.jpg"   width=850px height=450px alt="Sushi">
+        <h3>Sushi</h3>
+        <p>Origin: Japan</p>
+        <p>Rating: 4.5/5</p>
+        <p>Description: Vinegared rice and raw fish or vegetables, served with soy sauce and wasabi.</p>
+      </div>
+      <div class="dish">
+        <img src="https://images.meesho.com/images/products/403600491/uylmt_512.webp"   width=850px height=450px alt="Pizza">
+        <h3>Pizza</h3>
+        <p>Origin: Italy</p>
+        <p>Rating: 4.3/5</p>
+        <p>Description: Flatbread topped with tomato sauce, cheese, and various toppings, served hot and fresh.</p>
+      </div>
+      <div class="dish">
+        <img src="https://thumbs.dreamstime.com/b/delicious-mouth-watering-mexican-tacos-ai-generative-design-background-instagram-facebook-wall-painting-generativebackground-324252363.jpg"  width=850px height=450px alt="Tacos">
+        <h3>Tacos</h3>
+        <p>Origin: Mexico</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: Corn tortillas filled with seasoned ground beef, lettuce, tomatoes, and cheese, served with a side of salsa and sour cream.</p>
+      </div>
+    </div>
+    <!-- Vegetarian and Vegan Options -->
+    <div id="vegetarian-and-vegan-options" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">Vegetarian and Vegan Options</h2>
+      <div class="dish">
+        <img src="https://media.istockphoto.com/id/1331109186/photo/close-up-of-a-veggie-burger-with-copy-space.jpg?s=612x612&w=0&k=20&c=I9QgB8ar8CF8VmkN4U9gleYBWwADSl-tCYQ86OH679w="  width=850px height=450px alt="Veggie Burger">
+        <h3>Veggie Burger</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.5/5</</p>
+        <p>Description: A vegetarian burger made with a black bean patty, served with a side of sweet potato fries.</p>
+      </div>
+      <div class="dish">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTklhqvs3eu3TRG4DwlKUo5SMg60QuRDMp_gw&s"  width=850px height=450px alt="Lentil Soup">
+        <h3>Lentil Soup</h3>
+        <p>Origin: India</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: A hearty and comforting soup made with red lentils, onions, garlic, and spices, served with a side of crusty bread.</p>
+      </div>
+      <div class="dish">
+        <img src="https://cdn.pixabay.com/photo/2023/05/28/11/47/ai-generated-8023476_1280.jpg"  width=850px height=450px alt="Vegan Pasta">
+        <h3>Vegan Pasta</h3>
+        <p>Origin: Italy</p>
+        <p>Rating: 4.1/5</p>
+        <p>Description: A vegan pasta dish made with marinara sauce, roasted vegetables, and vegan mozzarella cheese, served with a side of garlic bread.</p>
+      </div>
+    </div>
+    <!-- Desserts -->
+    <div id="desserts" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">Desserts</h2>
+      <div class="dish">
+        <img src="https://png.pngtree.com/thumb_back/fw800/background/20240624/pngtree-the-tiramisu-cake-is-cut-in-half-on-a-beautiful-ceramic-image_15806778.jpg"  width=850px height=450px alt="Tiramisu">
+        <h3>Tiramisu</h3>
+        <p>Origin: Italy</p>
+        <p>Rating: 4.5/5</p>
+        <p>Description: A classic Italian dessert made with ladyfingers, mascarpone cheese, and espresso, layered and chilled to perfection.</p>
+      </div>
+      <div class="dish">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4JIqjlB0VJnkAN6vWz_GekJvRr0sSGst9ow&s"  width=850px height=450px alt="Cheesecake">
+        <h3>Cheesecake</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.3/5</p>
+        <p>Description: A rich and creamy dessert made with a graham cracker crust, a creamy cheesecake filling, and a fruit topping.</p>
+      </div>
+      <div class="dish">
+        <img src="https://media.istockphoto.com/id/1130692246/photo/homemade-chocolate-brownies-shot-from-above.jpg?s=612x612&w=0&k=20&c=vwXHR_DXORJNqHA8ufMhD38y4YqfPvChZioxT0bZjQQ="  width=850px height=450px alt="Brownies">
+        <h3>Brownies</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: A classic dessert made with melted chocolate, sugar, and eggs, baked in a square pan and cut into bite-sized pieces.</p>
+      </div>
+    </div>
+    <!-- Beverages -->
+    <div id="beverages" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">Beverages</h2>
+      <div class="dish">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/041/879/088/small/ai-generated-cup-of-coffee-with-beans-on-brown-background-top-view-space-for-text-photo.jpeg"   width=850px height=450pxalt="Coffee">
+        <h3>Coffee</h3>
+        <p>Origin: Ethiopia</p>
+        <p>Rating: 4.5/5</p>
+        <p>Description: A hot and rich beverage made from roasted coffee beans, served with cream and sugar.</p>
+      </div>
+      <div class="dish">
+        <img src="https://i.pinimg.com/236x/ec/2b/9d/ec2b9d6f0aa2b42b79cba30c0877fce8.jpg"  width=850px height=450px alt="Tea">
+        <h3>Tea</h3>
+        <p>Origin: China</p>
+        <p>Rating: 4.3/5</p>
+        <p>Description: A hot and soothing beverage made from steeped tea leaves, served with honey and lemon.</p>
+      </div>
+      <div class="dish">
+        <img src="https://images5.alphacoders.com/102/thumb-1920-1022723.jpg"  width=850px height=450px alt="Juice">
+        <h3>Juice</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: A cold and refreshing beverage made from freshly squeezed fruit, served with a straw and a slice of fruit.</p>
+      </div>
+    </div>
+    <!-- Special Diet -->
+    <div id="special-diet" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">Special Diet</h2>
+      <div class="dish">
+        <img src="https://myindulgence.in/wp-content/uploads/2023/03/food-pasta-basil-olives-wallpaper-preview.jpg"  width=850px height=450px alt="Gluten-Free Pasta">
+        <h3>Gluten-Free Pasta</h3>
+        <p>Origin: Italy</p>
+        <p>Rating: 4.5/5</p>
+        <p>Description: A gluten-free pasta dish made with rice flour, served with a side of marinara sauce and roasted vegetables.</p>
+      </div><div class="dish">
+        <img src="https://img.freepik.com/free-photo/delicious-vegan-burger-presentation_23-2151910886.jpg"  width=850px height=450px alt="Vegan Burger">
+        <h3>Vegan Burger</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.3/5</p>
+        <p>Description: A vegan burger made with a black bean patty, served with a side of sweet potato fries.</p>
+      </div>
+      <div class="dish">
+        <img src="https://media.istockphoto.com/id/489380182/photo/lactose-free-intolerance-food-with-background.jpg?s=612x612&w=0&k=20&c=diFWYGb-hQN1PQgDbKrBKbYJnYElrKduLGXJ_VDdp6o="  width=850px height=450px alt="Lactose-Free Milk">
+        <h3>Lactose-Free Milk</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: A lactose-free milk alternative made from almonds, served with a side of cereal or cookies.</p>
+      </div>
+    </div>
+    <!-- Seasonal and Limited Time Offers -->
+    <div id="seasonal-and-limited-time-offers" style="display: none;">
+      <h2 style="text-align: center; margin-top: 10px;font-size: 45px">Seasonal and Limited Time Offers</h2>
+      <div class="dish">
+        <img src="https://t4.ftcdn.net/jpg/02/91/79/63/360_F_291796313_uzVIzYCaDgHyRIar768rphJoVwuV8Fqs.jpg"  width=850px height=450px alt="Pumpkin Pie">
+        <h3>Pumpkin Pie</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.5/5</p>
+        <p>Description: A classic dessert made with pumpkin puree, spices, and evaporated milk, served with a side of whipped cream.</p>
+      </div>
+      <div class="dish">
+        <img src="https://cdn.pixabay.com/photo/2023/11/09/11/26/christmas-8377090_960_720.jpg"  width=850px height=450px alt="Christmas Cookies">
+        <h3>Christmas Cookies</h3>
+        <p>Origin: Europe</p>
+        <p>Rating: 4.3/5</p>
+        <p>Description: A selection of sweet and festive cookies made with sugar, butter, and spices, served with a side of hot chocolate.</p>
+      </div>
+      <div class="dish">
+        <img src="https://i.pinimg.com/originals/02/c0/d5/02c0d53af0207ad60cc89314fb8ecd28.jpg"  width=850px height=450px alt="Valentine's Day Cake">
+        <h3>Valentine's Day Cake</h3>
+        <p>Origin: USA</p>
+        <p>Rating: 4.2/5</p>
+        <p>Description: A rich and decadent cake made with chocolate, strawberries, and whipped cream, served with a side of champagne.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showIndianDishes() {
+      document.getElementById("indian-dishes").style.display = "block";
+      document.getElementById("international-dishes").style.display = "none";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "none";
+      document.getElementById("desserts").style.display = "none";
+      document.getElementById("beverages").style.display = "none";
+      document.getElementById("special-diet").style.display = "none";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "none";
+    }
+
+    function showInternationalDishes() {
+      document.getElementById("indian-dishes").style.display = "none";
+      document.getElementById("international-dishes").style.display = "block";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "none";
+      document.getElementById("desserts").style.display = "none";
+      document.getElementById("beverages").style.display = "none";
+      document.getElementById("special-diet").style.display = "none";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "none";
+    }
+
+    function showVegetarianAndVeganOptions() {
+      document.getElementById("indian-dishes").style.display = "none";
+      document.getElementById("international-dishes").style.display = "none";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "block";
+      document.getElementById("desserts").style.display = "none";
+      document.getElementById("beverages").style.display = "none";
+      document.getElementById("special-diet").style.display = "none";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "none";
+    } function showDesserts() {
+      document.getElementById("indian-dishes").style.display = "none";
+      document.getElementById("international-dishes").style.display = "none";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "none";
+      document.getElementById("desserts").style.display = "block";
+      document.getElementById("beverages").style.display = "none";
+      document.getElementById("special-diet").style.display = "none";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "none";
+    }
+
+    function showBeverages() {
+      document.getElementById("indian-dishes").style.display = "none";
+      document.getElementById("international-dishes").style.display = "none";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "none";
+      document.getElementById("desserts").style.display = "none";
+      document.getElementById("beverages").style.display = "block";
+      document.getElementById("special-diet").style.display = "none";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "none";
+    }
+
+    function showSpecialDiet() {
+      document.getElementById("indian-dishes").style.display = "none";
+      document.getElementById("international-dishes").style.display = "none";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "none";
+      document.getElementById("desserts").style.display = "none";
+      document.getElementById("beverages").style.display = "none";
+      document.getElementById("special-diet").style.display = "block";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "none";
+    }
+
+    function showSeasonalAndLimitedTimeOffers() {
+      document.getElementById("indian-dishes").style.display = "none";
+      document.getElementById("international-dishes").style.display = "none";
+      document.getElementById("vegetarian-and-vegan-options").style.display = "none";
+      document.getElementById("desserts").style.display = "none";
+      document.getElementById("beverages").style.display = "none";
+      document.getElementById("special-diet").style.display = "none";
+      document.getElementById("seasonal-and-limited-time-offers").style.display = "block";
+    }
+  </script>
+</body>
+</head>
+</html>
